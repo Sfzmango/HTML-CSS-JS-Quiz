@@ -1,0 +1,85 @@
+:root {
+    --border: 2px solid black;
+}
+
+* {
+    font-family: Calibri, 'Trebuchet MS', Futura, sans-serif;
+}
+
+html,
+body {
+    overflow: hidden;
+}
+
+.bkgdImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header span {
+    margin: 3% auto 0% 5%;
+    border: var(--border);
+    font-size: 2rem;
+}
+
+.header a {
+    text-decoration: none;
+    margin: 3% 5% 0% auto;
+    border: var(--border);
+    font-size: 1.5rem;
+}
+
+main {
+    position: relative;
+    display: block;
+    justify-content: center;
+    margin: 10%;
+    width: 80%;
+    border: var(--border);
+    border-radius: 15%;
+}
+
+.mainMenu * {
+    justify-content: center;
+    text-align: center;
+}
+
+.mainMenu h1 {
+    font-size: 4rem;
+    margin-top: 2%;
+}
+
+.mainMenu .mMImg {
+    width: 50%;
+    margin: 0% 25% 0% 25%;
+}
+
+.mainMenu h2 {
+    font-size: 2.5rem;
+}
+
+.btn button {
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    margin: 2% 0% 2% 0%;
+    font-size: 1.5rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border: var(--border);
+    font-size: 1.5rem;
+}
