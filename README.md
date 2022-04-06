@@ -36,7 +36,6 @@ This page is constructed with HTML, CSS, and Javascript. The user will be able t
 
 ## <ins> Current Issues: </ins>
 
-- Question 2 will not show up (skips over).
 - No high score local storage.
 - Time does not show up at the end.
 

@@ -33,6 +33,7 @@ var qNum = 3;
 
 function nextQ() {
     var currentBox = document.body.children[4].children[qNum];
+    console.log(currentBox);
     currentBox.style.display = "none";
     var nextBox = currentBox.nextElementSibling;
     nextBox.style.display = "block";
@@ -53,13 +54,13 @@ function incorrect() {
 
 function lqC() {
     alert("Correct!");
-    nextPrompt();
+    endQuiz();
 }
 
 function lqI() {
     alert("Incorrect!")
     secondsRemaining -= 5;
-    nextPrompt();
+    endQuiz();
 }
 
 // sets a timer function upon confirming starting the quiz
