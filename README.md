@@ -37,7 +37,6 @@ This page is constructed with HTML, CSS, and Javascript. The user will be able t
 ## <ins> Current Issues: </ins>
 
 - No high score local storage.
-- Time does not show up at the end.
 
 ## <ins> Installation: </ins>
 
