@@ -5,6 +5,7 @@
     --lBlack: #575757;
     --bBg: whitesmoke;
     --bShadow: 0px 0px 50px 5px var(--gold);
+    --qShadow: 0px 0px 10px 1px var(--gold);
 }
 
 * {
@@ -55,21 +56,28 @@ body {
 /* ---------------- MAIN MENU ---------------- */
 
 
-main {
+main,
+.box {
     position: relative;
     display: block;
     justify-content: center;
     margin: 10%;
     width: 80%;
+    height: 50%;
     border-radius: 15%;
     background-color: aliceblue;
     box-shadow: var(--bShadow);
     color: var(--lBlack);
+    text-align: center;
+    word-wrap: break-word;
+}
+
+main {
+    display: none !important;
 }
 
 .mainMenu * {
     justify-content: center;
-    text-align: center;
 }
 
 .mainMenu h1 {
@@ -99,7 +107,8 @@ main {
 }
 
 .startBtn button:hover,
-.promptBtn button:hover {
+.promptBtn button:hover,
+.qChoices input:hover {
     transition: 400ms;
     background-color: var(--lGold);
 }
@@ -110,22 +119,10 @@ main {
 /* ---------------- START PROMPT ---------------- */
 
 .startPrompt {
-    position: relative;
     display: none;
-    justify-content: center;
-    margin: 10%;
-    width: 80%;
-    border-radius: 15%;
-    background-color: aliceblue;
-    box-shadow: var(--bShadow);
-    color: var(--lBlack);
 }
 
-.startPrompt * {
-    text-align: center;
-}
-
-.startPrompt h2 {
+.box h2 {
     font-size: 3.5rem;
     margin-top: 2%;
     padding-top: 2%;
@@ -133,7 +130,7 @@ main {
     margin-bottom: 3%;
 }
 
-.startPrompt li {
+.box li {
     font-size: 2rem;
     margin: 2%;
 }
@@ -142,6 +139,23 @@ main {
 
 
 /* ---------------- QUESTIONS ---------------- */
+
+/* .questions {} */
+
+.questions span {
+    font-size: 2rem;
+}
+
+.questions .qChoices {
+    font-size: 1.5rem;
+    padding: 2% 0% 2% 0%;
+}
+
+.qChoices input {
+    box-shadow: var(--qShadow);
+    font-size: 1.5rem;
+    border-color: var(--lGold);
+}
 
 /* ================ /QUESTIONS ================ */
 
