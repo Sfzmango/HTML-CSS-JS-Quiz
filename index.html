@@ -47,7 +47,7 @@
             <li>4. There are X questions.</li><br>
         </ul>
         <div class="promptBtn">
-            <button onclick="nextPrompt()">Got it!</button>
+            <button onclick="startQuiz()">Got it!</button>
         </div>
     </section>
 
@@ -58,18 +58,14 @@
 
     <section class="questions box">
         <br>
-        <span>Time (s): <span class="time">x</span></span><br>
+        <span>Time (s): <span class="time"></span></span><br>
         <span>Score: <span class="score">x</span></span>
-        <h2>Question</h2>
+        <h2 class="quest"></h2>
         <form class="qChoices">
-            <input type="button" class="options"
-                value="Lorem ipsum dolor sit amet consectetur adipisicing elit."><br><br><br>
-            <input type="button" class="options"
-                value="Lorem ipsum dolor sit amet consectetur adipisicing elit."><br><br><br>
-            <input type="button" class="options"
-                value="Lorem ipsum dolor sit amet consectetur adipisicing elit."><br><br><br>
-            <input type="button" class="options"
-                value="Lorem ipsum dolor sit amet consectetur adipisicing elit."><br><br><br>
+            <input type="button" class="options" id="option1" value=""><br><br><br>
+            <input type="button" class="options" id="option2" value=""><br><br><br>
+            <input type="button" class="options" id="option3" value=""><br><br><br>
+            <input type="button" class="options" id="option4" value=""><br><br><br>
 
         </form>
 
@@ -82,8 +78,8 @@
 
     <section class="results box">
         <br>
-        <span>Time left: <span class="finalTime">x</span></span><br>
-        <span>Score: <span class="finalScore">x</span></span>
+        <span>Time left: <span class="finalTime"></span></span><br>
+        <span>Score: <span class="finalScore"></span></span>
         <form>
             <textarea class="inputName" placeholder="Enter Initials"></textarea><br>
             <button class="saveScore">Save</button>
