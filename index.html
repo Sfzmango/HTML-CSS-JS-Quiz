@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front-End Development Quiz</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+
+    <!-- link an icon for the title tab bar -->
     <link rel="icon" href="./assets/images/lightbulb.png">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
+    <!-- background image -->
     <img class="bkgdImg" src="./assets/images/background.webp" alt="background image">
 
+    <!-- option to check out high scores -->
     <header class="header">
-        <!-- <span>Front-End Development Quiz</span> -->
         <a href="#" class="highScore">High Scores</a>
     </header>
 
@@ -59,14 +59,85 @@
     <section class="questions box">
         <br>
         <span>Time (s): <span class="time"></span></span><br>
-        <h2 class="quest"></h2>
-        <form class="qChoices">
-            <input type="button" class="options" id="option1" value=""><br><br><br>
-            <input type="button" class="options" id="option2" value=""><br><br><br>
-            <input type="button" class="options" id="option3" value=""><br><br><br>
-            <input type="button" class="options" id="option4" value=""><br><br><br>
-
-        </form>
+        <div class="quest q1">
+            <h2>What does HTML do?</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="correct()">Provide a basic structure for a
+                    page</button><br><br><br>
+                <button type="button" class="options" id="option2" onclick="incorrect()">Provides additional features
+                    using scripts</button><br><br><br>
+                <button type="button" class="options" id="option3" onclick="incorrect()">Provides the visual design of
+                    styles</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="incorrect()">None of the
+                    above</button><br><br><br>
+            </form>
+        </div>
+        <div class="quest q2">
+            <h2>What does Javascript do?</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="incorrect()">Provides the visual design of
+                    styles</button><br><br><br>
+                <button type="button" class="options" id="option2" onclick="incorrect()">Provide a basic structure for a
+                    page</button><br><br><br>
+                <button type="button" class="options" id="option3" onclick="correct()">Provides additional features
+                    using scripts</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="incorrect()">None of the
+                    above</button><br><br><br>
+            </form>
+        </div>
+        <div class="quest q3">
+            <h2>What does CSS do?</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="incorrect()">Provide a basic structure for a
+                    page</button><br><br><br>
+                <button type="button" class="options" id="option2" onclick="correct()">Provides the visual design of
+                    styles</button><br><br><br>
+                <button type="button" class="options" id="option3" onclick="incorrect()">Provides additional features
+                    using
+                    scripts</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="incorrect()">None of the
+                    above</button><br><br><br>
+            </form>
+        </div>
+        <div class="quest q4">
+            <h2>Which one is correct? (# = placeholder)</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="incorrect()">&#60;img src="#"&#62;
+                    &#60;/img&#62;</button><br><br><br>
+                <button type="button" class="options" id="option2"
+                    onclick="incorrect()">document.get.ElementById(".#")</button><br><br><br>
+                <button type="button" class="options" id="option3"
+                    onclick="correct()">&#60;p&#62;...&#60;/p&#62;</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="incorrect()">for(var i = 0, i < #,
+                        i++)</button><br><br><br>
+            </form>
+        </div>
+        <div class="quest q5">
+            <h2>What is HTML short for?</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="correct()">HyperText Markup
+                    Language</button><br><br><br>
+                <button type="button" class="options" id="option2" onclick="incorrect()">HyperLink Markdown
+                    Logic</button><br><br><br>
+                <button type="button" class="options" id="option3" onclick="incorrect()">Hexadecimal Technical Markup
+                    Language</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="incorrect()">None of the
+                    above</button><br><br><br>
+            </form>
+        </div>
+        <div class="quest q6">
+            <h2>What is CSS short for?</h2>
+            <form class="qChoices">
+                <button type="button" class="options" id="option1" onclick="lqI()">Collapsing Spead
+                    Sheet</button><br><br><br>
+                <button type="button" class="options" id="option2" onclick="lqI()">Control Style
+                    Sheet</button><br><br><br>
+                <button type="button" class="options" id="option3" onclick="lqI()">Cascading Semantics
+                    Structure</button><br><br><br>
+                <button type="button" class="options" id="option4" onclick="lqC()">None of the
+                    above</button><br><br><br>
+            </form>
+        </div>
 
     </section>
 

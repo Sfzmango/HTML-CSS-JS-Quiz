@@ -9,7 +9,7 @@
 }
 
 * {
-    font-family: 'Nunito', Calibri, 'Trebuchet MS', Futura, sans-serif;
+    font-family: Calibri, 'Trebuchet MS', Futura, sans-serif;
 }
 
 html,
@@ -72,16 +72,12 @@ main,
     word-wrap: break-word;
 }
 
-/* main {
-    display: none !important;
-} */
-
 .mainMenu * {
     justify-content: center;
 }
 
 .mainMenu h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-top: 2%;
     padding-top: 2%;
 }
@@ -92,11 +88,12 @@ main,
 }
 
 .mainMenu h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .startBtn button,
 .promptBtn button,
+.qChoices button,
 .results form button {
     justify-content: center;
     width: 150px;
@@ -109,7 +106,7 @@ main,
 
 .startBtn button:hover,
 .promptBtn button:hover,
-.qChoices input:hover,
+.qChoices button:hover,
 .results form button:hover {
     transition: 400ms;
     background-color: var(--lGold);
@@ -150,16 +147,43 @@ main,
     font-size: 2rem;
 }
 
-.questions .qChoices {
-    font-size: 1.5rem;
-    padding: 2% 0% 2% 0%;
+.quest h2 {
+    font-size: 2rem;
 }
 
-.qChoices input {
+.questions .quest {
+    font-size: 1.5rem;
+    padding: 2% 0% 2% 0%;
+    display: block;
+}
+
+.qChoices button {
     box-shadow: var(--qShadow);
     font-size: 1.5rem;
     border-color: var(--lGold);
     word-wrap: break-word;
+    width: 40rem;
+    height: 3rem;
+}
+
+.questions .q2 {
+    display: none;
+}
+
+.questions .q3 {
+    display: none;
+}
+
+.questions .q4 {
+    display: none;
+}
+
+.questions .q5 {
+    display: none;
+}
+
+.questions .q6 {
+    display: none;
 }
 
 /* ================ /QUESTIONS ================ */

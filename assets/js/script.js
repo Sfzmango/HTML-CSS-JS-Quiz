@@ -19,12 +19,6 @@ var score = 0;
 var finalScore = 0;
 var finalTime = 0;
 
-var q1 = ["What does HTML do?", "Provide a basic structure for a page", "Provides the visual design of styles", "Provides additional features using scripts", "None of the above"]
-var q2 = ["What does CSS do?", "Provide a basic structure for a page", "Provides the visual design of styles", "Provides additional features using scripts", "None of the above"]
-var q3 = ["What does Javascript do?", "Provide a basic structure for a page", "Provides the visual design of styles", "Provides additional features using scripts", "None of the above"]
-var q4 = ["", "", "", "", ""]
-var q5 = ["", "", "", "", ""]
-
 // changes current box to the next box down the sibling list
 function nextPrompt() {
     var currentBox = document.body.children[promptNum];
@@ -35,76 +29,42 @@ function nextPrompt() {
     return promptNum;
 };
 
+var qNum = 2;
+
+function nextQ() {
+    var currentBox = document.body.children[4].children[qNum];
+    currentBox.style.display = "none";
+    var nextBox = currentBox.nextElementSibling;
+    nextBox.style.display = "block";
+    qNum++;
+    return qNum;
+}
+
 function correct() {
     alert("Correct!");
+    nextQ();
 };
 
 function incorrect() {
     alert("Incorrect!")
     secondsRemaining -= 5;
+    nextQ();
 };
 
-function question1() {
-    questEl.textContent = q1[0];
-    option1EL.setAttribute("value", q1[1]);
-    option2EL.setAttribute("value", q1[2]);
-    option3EL.setAttribute("value", q1[3]);
-    option4EL.setAttribute("value", q1[4]);
-
-    option1EL.addEventListener("click", correct);
-    option2EL.addEventListener("click", incorrect);
-    option3EL.addEventListener("click", incorrect);
-    option4EL.addEventListener("click", incorrect);
-
-    optionsEl.addEventListener("click", question2);
+function lqC() {
+    alert("Correct!");
+    nextPrompt();
 }
 
-function question2() {
-    questEl.textContent = q2[0];
-    option1EL.setAttribute("value", q2[1]);
-    option2EL.setAttribute("value", q2[2]);
-    option3EL.setAttribute("value", q2[3]);
-    option4EL.setAttribute("value", q2[4]);
-
-    option1EL.removeEventListener("click", correct);
-    option2EL.removeEventListener("click", incorrect);
-    option3EL.removeEventListener("click", incorrect);
-    option4EL.removeEventListener("click", incorrect);
-    optionsEl.removeEventListener("click", question2);
-
-    option2EL.addEventListener("click", correct);
-    option1EL.addEventListener("click", incorrect);
-    option3EL.addEventListener("click", incorrect);
-    option4EL.addEventListener("click", incorrect);
-
-    optionsEl.addEventListener("click", question3);
-}
-
-function question3() {
-    questEl.textContent = q3[0];
-    option1EL.setAttribute("value", q3[1]);
-    option2EL.setAttribute("value", q3[2]);
-    option3EL.setAttribute("value", q3[3]);
-    option4EL.setAttribute("value", q3[4]);
-
-    option2EL.removeEventListener("click", correct);
-    option1EL.removeEventListener("click", incorrect);
-    option3EL.removeEventListener("click", incorrect);
-    option4EL.removeEventListener("click", incorrect);
-    optionsEl.removeEventListener("click", question3);
-
-    option3EL.addEventListener("click", correct);
-    option2EL.addEventListener("click", incorrect);
-    option1EL.addEventListener("click", incorrect);
-    option4EL.addEventListener("click", incorrect);
-
-    optionsEl.addEventListener("click", question4);
+function lqI() {
+    alert("Incorrect!")
+    secondsRemaining -= 5;
+    nextPrompt();
 }
 
 // sets a timer function upon confirming starting the quiz
 function startQuiz() {
     nextPrompt();
-    question1();
     var timer = setInterval(function () {
         if (!stopTimer) {
             secondsRemaining--;
