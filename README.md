@@ -39,7 +39,7 @@ Installation is not required for this for it is a mainly a Javascript program th
 
 ## <ins> Site Demonstration: </ins>
 
-![Site Demonstration](./assets/images/)
+![Site Demonstration](./assets/images/site-demonstration.gif)
 
 ## <ins> Credits and License: </ins>
 
