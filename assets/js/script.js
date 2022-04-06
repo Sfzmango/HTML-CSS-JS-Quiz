@@ -7,14 +7,13 @@ var option1EL = document.getElementById("option1");
 var option2EL = document.getElementById("option2");
 var option3EL = document.getElementById("option3");
 var option4EL = document.getElementById("option4");
-var selectedAns = document.getElementsByClassName("qChoices");
-var correctAns = "";
+var highScore = document.querySelector(".highScore");
 
 
 var stopTimer = false;
 
 var promptNum = 2;
-var secondsRemaining = 5;
+var secondsRemaining = 60;
 var score = 0;
 var finalScore = 0;
 var finalTime = 0;
@@ -46,20 +45,22 @@ function question1() {
     option3EL.setAttribute("value", q1[3]);
     option4EL.setAttribute("value", q1[4]);
 
-    correctAns = q1[1];
-
-    selectedAns.addEventListener("click", function () {
-        if (selectedAns == q1[1]) {
-            score += 10;
-            question2();
-        }
-        if (selectedAns != q1[1]) {
-            score -= 10;
-            secondsRemaining -= 5;
-            question2();
-        }
+    document.getElementById("option1").addEventListener("click", function () {
+        question2();
     });
-    console.log(score);
+    document.getElementById("option2").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question2();
+    });
+    document.getElementById("option3").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question2();
+    });
+    document.getElementById("option4").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question2();
+    });
+
 }
 
 function question2() {
@@ -69,21 +70,22 @@ function question2() {
     option3EL.setAttribute("value", q2[3]);
     option4EL.setAttribute("value", q2[4]);
 
-    correctAns = q2[2];
-
-    selectedAns.addEventListener("click", function () {
-        if (selectedAns == correctAns) {
-            score += 10;
-            question2();
-        }
-        if (selectedAns != correctAns) {
-            score -= 10;
-            secondsRemaining -= 5;
-            question2();
-        }
+    document.getElementById("option2").addEventListener("click", function () {
+        question3();
+    });
+    document.getElementById("option1").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question3();
+    });
+    document.getElementById("option3").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question3();
+    });
+    document.getElementById("option4").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question3();
     });
 
-    console.log(score);
 }
 
 function question3() {
@@ -93,57 +95,44 @@ function question3() {
     option3EL.setAttribute("value", q3[3]);
     option4EL.setAttribute("value", q3[4]);
 
-    correctAns = q3[3];
-
-    if (selectedAns == correctAns) {
-        score += 10;
-        nextPrompt();
-    }
-    if (selectedAns != correctAns) {
-        score -= 10;
+    document.getElementById("option3").addEventListener("click", function () {
+        question4();
+    });
+    document.getElementById("option2").addEventListener("click", function () {
         secondsRemaining -= 5;
-        nextPrompt();
-    }
+        question4();
+    });
+    document.getElementById("option1").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question4();
+    });
+    document.getElementById("option4").addEventListener("click", function () {
+        secondsRemaining -= 5;
+        question4();
+    });
 
-    // function checker() {
-    //     if (selectedAns.value === q3[3]) {
-    //         score = + 10;
-    //         question4();
-    //         return;
-    //     }
-    //     if (selectedAns.value !== q3[3]) {
-    //         score -= 10;
-    //         secondsRemaining -= 5;
-    //         question4();
-    //         return;
-    //     }
-    // }
-    // selectedAns.addEventListener("click", checker);
-    console.log(score);
 }
 
 // sets a timer function upon confirming starting the quiz
 function startQuiz() {
     nextPrompt();
     question1();
-    // var timer = setInterval(function () {
-    //     if (!stopTimer) {
-    //         secondsRemaining--;
-    //         timeEl.textContent = secondsRemaining;
-    //         if (secondsRemaining === 0) {
-    //             clearInterval(timer);
-    //             endQuiz();
-    //             score = 0;
-    //         }
-    //     }
-    // }, 1000);
+    var timer = setInterval(function () {
+        if (!stopTimer) {
+            secondsRemaining--;
+            timeEl.textContent = secondsRemaining;
+            if (secondsRemaining === 0) {
+                clearInterval(timer);
+                endQuiz();
+                score = 0;
+            }
+        }
+    }, 1000);
 }
 
 function endQuiz() {
     stopTimer = true;
     finalTime = secondsRemaining;
-    finalScore = score + finalTime;
     nextPrompt();
     finalTimeEl.textContent = finalTime;
-    finalScoreEl.textContent = finalScore;
 }
