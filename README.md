@@ -1,4 +1,4 @@
-# Pass-Gen
+# Front-End Development Quiz
 
 ## <ins> Table of Contents: </ins>
 
