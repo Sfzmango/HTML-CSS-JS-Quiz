@@ -57,7 +57,7 @@ body {
 
 main {
     position: relative;
-    display: none;
+    display: block;
     justify-content: center;
     margin: 10%;
     width: 80%;
@@ -111,7 +111,7 @@ main {
 
 .startPrompt {
     position: relative;
-    display: block;
+    display: none;
     justify-content: center;
     margin: 10%;
     width: 80%;

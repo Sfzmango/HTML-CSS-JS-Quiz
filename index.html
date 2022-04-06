@@ -21,12 +21,12 @@
 
     <!-- ---------------- MAIN MENU ----------------  -->
 
-    <main class="mainMenu">
+    <main class="mainMenu box" id="box1">
         <h1>Front-End Development Quiz</h1>
         <img class="mMImg" src="./assets/images/html-css-js.png" alt="html5, js, css3">
         <h2>Test your knowledge</h2>
         <div class="startBtn">
-            <button>Start Quiz</button>
+            <button onclick="nextPrompt()">Start Quiz</button>
         </div>
     </main>
 
@@ -35,7 +35,7 @@
 
     <!-- ---------------- START PROMPT ---------------- -->
 
-    <section class="startPrompt">
+    <section class="startPrompt box" id="box2">
         <h2>Guidelines:</h2>
         <ul>
             <li>1. This quiz is timed. Timer will start once you hit start.</li><br>
@@ -51,7 +51,11 @@
     <!-- ================ /START PROMPT ================ -->
 
 
+    <!-- ---------------- QUESTION ---------------- -->
 
+
+
+    <!-- ================ /QUESTION ================ -->
 
     <footer>
         <h3>Maung Htike &copy;</h3>
