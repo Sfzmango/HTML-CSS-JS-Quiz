@@ -9,5 +9,3 @@ function nextPrompt() {
     promptNum++;
     return promptNum;
 };
-
-function 

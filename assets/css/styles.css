@@ -9,7 +9,7 @@
 }
 
 * {
-    font-family: Calibri, 'Trebuchet MS', Futura, sans-serif;
+    font-family: 'Nunito', Calibri, 'Trebuchet MS', Futura, sans-serif;
 }
 
 html,
@@ -72,9 +72,9 @@ main,
     word-wrap: break-word;
 }
 
-main {
+/* main {
     display: none !important;
-}
+} */
 
 .mainMenu * {
     justify-content: center;
@@ -96,7 +96,8 @@ main {
 }
 
 .startBtn button,
-.promptBtn button {
+.promptBtn button,
+.results form button {
     justify-content: center;
     width: 150px;
     height: 60px;
@@ -108,7 +109,8 @@ main {
 
 .startBtn button:hover,
 .promptBtn button:hover,
-.qChoices input:hover {
+.qChoices input:hover,
+.results form button:hover {
     transition: 400ms;
     background-color: var(--lGold);
 }
@@ -140,7 +142,9 @@ main {
 
 /* ---------------- QUESTIONS ---------------- */
 
-/* .questions {} */
+.questions {
+    display: none;
+}
 
 .questions span {
     font-size: 2rem;
@@ -155,9 +159,30 @@ main {
     box-shadow: var(--qShadow);
     font-size: 1.5rem;
     border-color: var(--lGold);
+    word-wrap: break-word;
 }
 
 /* ================ /QUESTIONS ================ */
+
+
+/* ---------------- RESULTS ---------------- */
+
+.results {
+    display: none;
+}
+
+.results * {
+    font-size: 2rem;
+    margin: 2% 0% 2% 0%;
+}
+
+.results textarea {
+    width: 20rem;
+    height: 3rem;
+    text-align: center;
+}
+
+/* ================ /RESULTS ================ */
 
 
 /* ---------------- FOOTER ---------------- */
