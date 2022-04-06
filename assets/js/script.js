@@ -9,7 +9,8 @@ var option3EL = document.getElementById("option3");
 var option4EL = document.getElementById("option4");
 var optionsEl = document.querySelector(".options");
 var highScore = document.querySelector(".highScore");
-
+var saveScore = document.querySelector(".saveScore");
+var inputName = document.querySelector(".inputName");
 
 var stopTimer = false;
 
@@ -85,3 +86,14 @@ function endQuiz() {
     nextPrompt();
     finalTimeEl.textContent = finalTime;
 }
+
+saveScore.addEventListener("click", function () {
+
+    var saveS = {
+        initials: inputName.value,
+        time: finalTime.value,
+    }
+
+    localStorage.setItem("saveSStringify", JSON.stringify(saveS));
+    localStorage.setItem("saveS", saveS);
+});
