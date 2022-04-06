@@ -29,7 +29,7 @@ function nextPrompt() {
     return promptNum;
 };
 
-var qNum = 2;
+var qNum = 3;
 
 function nextQ() {
     var currentBox = document.body.children[4].children[qNum];

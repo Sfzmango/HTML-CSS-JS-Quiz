@@ -154,7 +154,6 @@ main,
 .questions .quest {
     font-size: 1.5rem;
     padding: 2% 0% 2% 0%;
-    display: block;
 }
 
 .qChoices button {
@@ -164,6 +163,10 @@ main,
     word-wrap: break-word;
     width: 40rem;
     height: 3rem;
+}
+
+.questions .q1 {
+    display: block;
 }
 
 .questions .q2 {
