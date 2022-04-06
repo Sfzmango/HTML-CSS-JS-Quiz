@@ -7,6 +7,7 @@ var option1EL = document.getElementById("option1");
 var option2EL = document.getElementById("option2");
 var option3EL = document.getElementById("option3");
 var option4EL = document.getElementById("option4");
+var optionsEl = document.querySelector(".options");
 var highScore = document.querySelector(".highScore");
 
 
@@ -34,9 +35,14 @@ function nextPrompt() {
     return promptNum;
 };
 
-function checker() {
+function correct() {
+    alert("Correct!");
+};
 
-}
+function incorrect() {
+    alert("Incorrect!")
+    secondsRemaining -= 5;
+};
 
 function question1() {
     questEl.textContent = q1[0];
@@ -45,22 +51,12 @@ function question1() {
     option3EL.setAttribute("value", q1[3]);
     option4EL.setAttribute("value", q1[4]);
 
-    document.getElementById("option1").addEventListener("click", function () {
-        question2();
-    });
-    document.getElementById("option2").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question2();
-    });
-    document.getElementById("option3").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question2();
-    });
-    document.getElementById("option4").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question2();
-    });
+    option1EL.addEventListener("click", correct);
+    option2EL.addEventListener("click", incorrect);
+    option3EL.addEventListener("click", incorrect);
+    option4EL.addEventListener("click", incorrect);
 
+    optionsEl.addEventListener("click", question2);
 }
 
 function question2() {
@@ -70,22 +66,18 @@ function question2() {
     option3EL.setAttribute("value", q2[3]);
     option4EL.setAttribute("value", q2[4]);
 
-    document.getElementById("option2").addEventListener("click", function () {
-        question3();
-    });
-    document.getElementById("option1").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question3();
-    });
-    document.getElementById("option3").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question3();
-    });
-    document.getElementById("option4").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question3();
-    });
+    option1EL.removeEventListener("click", correct);
+    option2EL.removeEventListener("click", incorrect);
+    option3EL.removeEventListener("click", incorrect);
+    option4EL.removeEventListener("click", incorrect);
+    optionsEl.removeEventListener("click", question2);
 
+    option2EL.addEventListener("click", correct);
+    option1EL.addEventListener("click", incorrect);
+    option3EL.addEventListener("click", incorrect);
+    option4EL.addEventListener("click", incorrect);
+
+    optionsEl.addEventListener("click", question3);
 }
 
 function question3() {
@@ -95,22 +87,18 @@ function question3() {
     option3EL.setAttribute("value", q3[3]);
     option4EL.setAttribute("value", q3[4]);
 
-    document.getElementById("option3").addEventListener("click", function () {
-        question4();
-    });
-    document.getElementById("option2").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question4();
-    });
-    document.getElementById("option1").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question4();
-    });
-    document.getElementById("option4").addEventListener("click", function () {
-        secondsRemaining -= 5;
-        question4();
-    });
+    option2EL.removeEventListener("click", correct);
+    option1EL.removeEventListener("click", incorrect);
+    option3EL.removeEventListener("click", incorrect);
+    option4EL.removeEventListener("click", incorrect);
+    optionsEl.removeEventListener("click", question3);
 
+    option3EL.addEventListener("click", correct);
+    option2EL.addEventListener("click", incorrect);
+    option1EL.addEventListener("click", incorrect);
+    option4EL.addEventListener("click", incorrect);
+
+    optionsEl.addEventListener("click", question4);
 }
 
 // sets a timer function upon confirming starting the quiz
