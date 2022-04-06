@@ -6,6 +6,7 @@
 - [Description of the Page](#description-of-the-page)
 - [Remarks](#remarks)
 - [Technologies and Programs Used](#technologies-and-programs-used)
+- [Current Issues](#current-issues)
 - [Installation](#installation)
 - [Site Demonstration](#site-demonstration)
 - [Credits](#credits)
@@ -32,6 +33,12 @@ This page is constructed with HTML, CSS, and Javascript. The user will be able t
 - Git/Github
 - Chrome Web Developer Tools
 - Google Fonts
+
+## <ins> Current Issues: </ins>
+
+- Question 2 will not show up (skips over).
+- No high score local storage.
+- Time does not show up at the end.
 
 ## <ins> Installation: </ins>
 
